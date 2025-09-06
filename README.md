@@ -1,35 +1,35 @@
 # SIMD-ONL
-**Single Instruction Multiple Data Optimized Numerical Library**
+Single Instruction Multiple Data Optimized Numerical Library
 
 A high-performance SIMD library for Intel x86-64 processors, featuring runtime CPU detection and optimized implementations for vector operations, matrix mathematics, and signal processing.
 
-## 🚀 Features
+## Features
 
-### **Vector Operations**
-- **Vector Addition/Subtraction**: Up to 1.46x speedup
-- **Vector Scaling**: Up to 1.09x speedup
-- **Dot Product**: Up to 6.00x speedup with excellent accuracy
-- **Vector Norm**: Up to 5.82x speedup
-- **Vector Normalization**: Built on optimized norm and scaling
+### Vector Operations
+- Vector Addition/Subtraction: Up to 1.46x speedup
+- Vector Scaling: Up to 1.09x speedup
+- Dot Product: Up to 6.00x speedup with excellent accuracy
+- Vector Norm: Up to 5.82x speedup
+- Vector Normalization: Built on optimized norm and scaling
 
-### **Matrix Operations**
-- **4x4 Matrix Multiplication**: Optimized scalar implementation
-- **3x3 Matrix Multiplication**: Optimized scalar implementation
-- **4x4 Matrix-Vector Multiplication**: SIMD-optimized with horizontal sums
-- **3x3 Matrix-Vector Multiplication**: Optimized scalar implementation
+### Matrix Operations
+- 4x4 Matrix Multiplication: Optimized scalar implementation
+- 3x3 Matrix Multiplication: Optimized scalar implementation
+- 4x4 Matrix-Vector Multiplication: SIMD-optimized with horizontal sums
+- 3x3 Matrix-Vector Multiplication: Optimized scalar implementation
 
-### **Signal Processing**
-- **Fast Fourier Transform (FFT)**: Radix-2 implementation
+### Signal Processing
+- Fast Fourier Transform (FFT): Radix-2 implementation
   - Forward FFT: ~120μs for 1024 points
   - Inverse FFT: ~150μs for 1024 points
   - Round-trip accuracy: 6.20e-006 error
 
-### **CPU Detection & Dispatch**
-- **Runtime CPU feature detection** (SSE4.1, SSE4.2, AVX, AVX2, FMA)
-- **Automatic dispatch** to best available SIMD implementation
-- **Fallback to scalar** for unsupported operations
+### CPU Detection & Dispatch
+- Runtime CPU feature detection (SSE4.1, SSE4.2, AVX, AVX2, FMA)
+- Automatic dispatch to best available SIMD implementation
+- Fallback to scalar for unsupported operations
 
-## 📊 Performance Results
+## Performance Results
 
 Tested on Intel i9-9900K with AVX2 support:
 
@@ -43,7 +43,7 @@ Tested on Intel i9-9900K with AVX2 support:
 | Matrix-Vector (4x4) | SIMD optimized | Perfect |
 | FFT (1024 pts) | ~120μs | 6.20e-006 error |
 
-## 🛠️ Building
+## Building
 
 ### Prerequisites
 - GCC with AVX2 support (tested with MinGW)
@@ -68,7 +68,7 @@ g++ -std=c++17 -O3 -mavx2 -mfma -DPLATFORM_X86 -I../include \
     ../tests/test_vector_add.cpp -o simd_test.exe
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 SIMD-ONL/
@@ -95,7 +95,7 @@ SIMD-ONL/
 └── build/                  # Build output directory
 ```
 
-## 🧪 Testing
+## Testing
 
 Run the comprehensive test suite:
 
@@ -113,7 +113,7 @@ Run the comprehensive test suite:
 ./accuracy_test.exe
 ```
 
-## 💡 Usage Example
+## Usage Example
 
 ```cpp
 #include "simd_lib.h"
@@ -148,31 +148,27 @@ int main() {
 }
 ```
 
-## 🎯 Supported CPU Features
+## Supported CPU Features
 
-- **SSE4.1/SSE4.2**: 128-bit SIMD operations
-- **AVX**: 256-bit SIMD operations
-- **AVX2**: Enhanced 256-bit SIMD operations
-- **FMA**: Fused multiply-add operations (detected but not yet implemented)
+- SSE4.1/SSE4.2: 128-bit SIMD operations
+- AVX: 256-bit SIMD operations
+- AVX2: Enhanced 256-bit SIMD operations
+- FMA: Fused multiply-add operations (detected but not yet implemented)
 
-## 🔮 Future Plans
+## Future Plans
 
-- [ ] **Cross-platform support** (ARM NEON, Apple Silicon)
-- [ ] **AVX-512** support for newer processors
-- [ ] **FMA optimizations** for improved performance
-- [ ] **More matrix operations** (LU decomposition, eigenvalues)
-- [ ] **Advanced FFT** (mixed-radix, real-valued)
-- [ ] **Convolution operations** for signal processing
-- [ ] **CMake build system** for easier compilation
+- Cross-platform support (ARM NEON, Apple Silicon)
+- AVX-512 support for newer processors
+- FMA optimizations for improved performance
+- More matrix operations (LU decomposition, eigenvalues)
+- Advanced FFT (mixed-radix, real-valued)
+- Convolution operations for signal processing
+- CMake build system for easier compilation
 
-## 📄 License
+## License
 
 This project is open source. See the project plan for detailed implementation notes.
 
-## 🤝 Contributing
+## Contributing
 
 This library was developed as an educational project demonstrating SIMD programming techniques. Contributions and improvements are welcome!
-
----
-
-**Built with ❤️ for high-performance computing**
